@@ -31,21 +31,18 @@
 
 @implementation FacebookShare
 
-- (void)sharedMessage:(NSString *) message {
-
-}
-
-- (void)sharedImage:(NSURL *) imageUrl {
-    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
-    dialog.fromViewController = self;
+- (void)sharedImage:(UIImage *) sharedImage
+ fromViewController:(UIViewController *) fromViewController
+{
+    FBSDKSharePhoto *photo  = [[FBSDKSharePhoto alloc] init];
+    photo.image             = sharedImage;
+    photo.userGenerated     = YES;
     
-    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
-    photo.image = [UIImage imageWithContentsOfFile:[imageUrl absoluteString]];
-    photo.userGenerated = YES;
-    photo.caption = @"Haha";
     FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
     content.photos = @[photo];
     
+    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
+    dialog.fromViewController = fromViewController;
     dialog.shareContent = content;
     dialog.mode = FBSDKShareDialogModeShareSheet;
     [dialog show];

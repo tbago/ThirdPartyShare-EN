@@ -27,8 +27,8 @@
 //
 
 #import "ViewController.h"
-#import <ThirdPartyShare/ThirdPartyShareFactory.h>
-#import <FBSDKShareKit/FBSDKShareKit.h>
+#import "GooglePlusShare.h"
+#import "FacebookShare.h"
 
 @interface ViewController ()
 
@@ -40,18 +40,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
-    photo.image = [UIImage imageNamed:@"facebook_share"];
-    photo.userGenerated = YES;
-    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
-    content.photos = @[photo];
-    
-    [FBSDKShareAPI shareWithContent:content delegate:nil];
-    
-    FBSDKShareButton *button = [[FBSDKShareButton alloc] initWithFrame:self.facebookBackView.frame];
-    button.shareContent = content;
-    [self.view addSubview:button];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,18 +53,8 @@
 }
 
 - (IBAction)facebookButtonClick:(UIButton *)sender {
-    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
-    dialog.fromViewController = self;
-    
-    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
-    photo.image = [UIImage imageNamed:@"facebook_share"];
-    photo.userGenerated = YES;
-    photo.caption = @"Haha";
-    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
-    content.photos = @[photo];
-    
-    dialog.shareContent = content;
-    dialog.mode = FBSDKShareDialogModeShareSheet;
-    [dialog show];
+    FacebookShare *facebookShare = [[FacebookShare alloc] init];
+    [facebookShare sharedImage:[UIImage imageNamed:@"facebook_share"]
+            fromViewController:self];
 }
 @end

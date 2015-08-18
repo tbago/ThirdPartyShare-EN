@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -41,8 +40,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx8-bS-xlV">
-                                <rect key="frame" x="23" y="107" width="30" height="30"/>
-                                <state key="normal" title="test">
+                                <rect key="frame" x="96" y="20" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -53,18 +53,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8PA-Lc-Us7" firstAttribute="centerY" secondItem="bQA-W9-bVv" secondAttribute="centerY" id="6SH-sz-Doh"/>
+                            <constraint firstItem="jx8-bS-xlV" firstAttribute="leading" secondItem="bQA-W9-bVv" secondAttribute="trailing" constant="20" id="AO6-ZD-MvP"/>
+                            <constraint firstItem="jx8-bS-xlV" firstAttribute="width" secondItem="bQA-W9-bVv" secondAttribute="width" id="HvB-uc-czZ"/>
                             <constraint firstItem="8PA-Lc-Us7" firstAttribute="leading" secondItem="bQA-W9-bVv" secondAttribute="trailing" constant="20" id="NgF-sf-wiV"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ngb-HL-pAE"/>
-                            <constraint firstItem="jx8-bS-xlV" firstAttribute="top" secondItem="bQA-W9-bVv" secondAttribute="bottom" constant="27" id="Nv4-28-QG8"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SJN-SG-SR6"/>
-                            <constraint firstItem="8PA-Lc-Us7" firstAttribute="top" secondItem="bQA-W9-bVv" secondAttribute="top" id="f64-UI-wc0"/>
-                            <constraint firstItem="jx8-bS-xlV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="u92-YN-FMq"/>
+                            <constraint firstItem="jx8-bS-xlV" firstAttribute="height" secondItem="bQA-W9-bVv" secondAttribute="height" id="dVq-mT-rxI"/>
+                            <constraint firstItem="jx8-bS-xlV" firstAttribute="centerY" secondItem="bQA-W9-bVv" secondAttribute="centerY" id="s7f-qi-KhU"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="f64-UI-wc0"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="facebookBackView" destination="8PA-Lc-Us7" id="A9T-eH-jUm"/>

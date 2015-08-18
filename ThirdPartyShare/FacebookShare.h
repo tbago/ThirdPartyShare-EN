@@ -26,12 +26,12 @@
 //  Created by tbago on 15/8/18.
 //
 
-#import "ThirdPartyShare.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface FacebookShare : ThirdPartyShare
+@interface FacebookShare : NSObject
 
-- (void)sharedMessage:(NSString *) message;
-
-- (void)sharedImage:(NSURL *) imageUrl;
+- (void)sharedImage:(UIImage *) sharedImage
+ fromViewController:(UIViewController *) fromViewController;
 
 @end

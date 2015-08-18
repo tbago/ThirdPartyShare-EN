@@ -26,8 +26,12 @@
 //  Created by tbago on 15/8/17.
 //
 
-#import "ThirdPartyShare.h"
+#import <Foundation/Foundation.h>
 
-@interface GooglePlusShare : ThirdPartyShare
+@interface GooglePlusShare : NSObject
+
+- (void)sharedMessageWithTitle:(NSString *) sharedTitle
+                   Description:(NSString *) description
+                  thumbnailURL:(NSURL *) thumbnailURL;
 
 @end
