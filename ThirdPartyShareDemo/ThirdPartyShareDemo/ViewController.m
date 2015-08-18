@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <ThirdPartyShare/ThirdPartyShareFactory.h>
 
 @interface ViewController ()
 
@@ -24,4 +25,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)googlePlusButtonClick:(UIButton *)sender {
+    ThirdPartyShare *googlePlusShare = [[ThirdPartyShareFactory sharedInstance] createThirdPartySharedInstance:GooglePlus];
+    [googlePlusShare sharedMessageWithTitle:@"test title" Description:@"description" thumbnailURL:nil];
+}
 @end

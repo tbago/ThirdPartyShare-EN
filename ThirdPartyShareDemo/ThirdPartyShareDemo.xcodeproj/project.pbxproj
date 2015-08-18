@@ -16,6 +16,11 @@
 		D05C61EB1B82C95B00D7B438 /* ThirdPartyShareDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61EA1B82C95B00D7B438 /* ThirdPartyShareDemoTests.m */; };
 		D05C61FA1B82C9ED00D7B438 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C61F81B82C9ED00D7B438 /* GoogleOpenSource.framework */; };
 		D05C61FB1B82C9ED00D7B438 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */; };
+		D05C62021B82CA3C00D7B438 /* GooglePlusShare.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61FD1B82CA3C00D7B438 /* GooglePlusShare.m */; };
+		D05C62031B82CA3C00D7B438 /* ThirdPartyShare.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61FF1B82CA3C00D7B438 /* ThirdPartyShare.m */; };
+		D05C62041B82CA3C00D7B438 /* ThirdPartyShareFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C62011B82CA3C00D7B438 /* ThirdPartyShareFactory.m */; };
+		D05C62071B82CACE00D7B438 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62061B82CACE00D7B438 /* CoreMotion.framework */; };
+		D05C62091B82CF4400D7B438 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62081B82CF4400D7B438 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,14 @@
 		D05C61EA1B82C95B00D7B438 /* ThirdPartyShareDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyShareDemoTests.m; sourceTree = "<group>"; };
 		D05C61F81B82C9ED00D7B438 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
+		D05C61FC1B82CA3C00D7B438 /* GooglePlusShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlusShare.h; sourceTree = "<group>"; };
+		D05C61FD1B82CA3C00D7B438 /* GooglePlusShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlusShare.m; sourceTree = "<group>"; };
+		D05C61FE1B82CA3C00D7B438 /* ThirdPartyShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyShare.h; sourceTree = "<group>"; };
+		D05C61FF1B82CA3C00D7B438 /* ThirdPartyShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyShare.m; sourceTree = "<group>"; };
+		D05C62001B82CA3C00D7B438 /* ThirdPartyShareFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyShareFactory.h; sourceTree = "<group>"; };
+		D05C62011B82CA3C00D7B438 /* ThirdPartyShareFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyShareFactory.m; sourceTree = "<group>"; };
+		D05C62061B82CACE00D7B438 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D05C62081B82CF4400D7B438 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05C62091B82CF4400D7B438 /* SystemConfiguration.framework in Frameworks */,
+				D05C62071B82CACE00D7B438 /* CoreMotion.framework in Frameworks */,
 				D05C61FA1B82C9ED00D7B438 /* GoogleOpenSource.framework in Frameworks */,
 				D05C61FB1B82C9ED00D7B438 /* GooglePlus.framework in Frameworks */,
 			);
@@ -129,6 +144,12 @@
 		D05C61F51B82C98200D7B438 /* ThirdPartyShare */ = {
 			isa = PBXGroup;
 			children = (
+				D05C62001B82CA3C00D7B438 /* ThirdPartyShareFactory.h */,
+				D05C62011B82CA3C00D7B438 /* ThirdPartyShareFactory.m */,
+				D05C61FE1B82CA3C00D7B438 /* ThirdPartyShare.h */,
+				D05C61FF1B82CA3C00D7B438 /* ThirdPartyShare.m */,
+				D05C61FC1B82CA3C00D7B438 /* GooglePlusShare.h */,
+				D05C61FD1B82CA3C00D7B438 /* GooglePlusShare.m */,
 				D05C61F61B82C99600D7B438 /* Frameworks */,
 			);
 			name = ThirdPartyShare;
@@ -139,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D05C61F71B82C9AD00D7B438 /* GooglePlus */,
+				D05C62051B82CA5300D7B438 /* FrameworkDependency */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +172,15 @@
 				D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */,
 			);
 			path = GooglePlus;
+			sourceTree = "<group>";
+		};
+		D05C62051B82CA5300D7B438 /* FrameworkDependency */ = {
+			isa = PBXGroup;
+			children = (
+				D05C62081B82CF4400D7B438 /* SystemConfiguration.framework */,
+				D05C62061B82CACE00D7B438 /* CoreMotion.framework */,
+			);
+			name = FrameworkDependency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05C62021B82CA3C00D7B438 /* GooglePlusShare.m in Sources */,
+				D05C62031B82CA3C00D7B438 /* ThirdPartyShare.m in Sources */,
 				D05C61D71B82C95B00D7B438 /* ViewController.m in Sources */,
 				D05C61D41B82C95B00D7B438 /* AppDelegate.m in Sources */,
 				D05C61D11B82C95B00D7B438 /* main.m in Sources */,
+				D05C62041B82CA3C00D7B438 /* ThirdPartyShareFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +420,11 @@
 					"$(inherited)",
 					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/GooglePlus",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../,
+				);
 				INFOPLIST_FILE = ThirdPartyShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +438,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/GooglePlus",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../,
 				);
 				INFOPLIST_FILE = ThirdPartyShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

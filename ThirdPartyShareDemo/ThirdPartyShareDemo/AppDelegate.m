@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <GooglePlus/GooglePlus.h>
+
+static NSString * const kGooglePlusClientID = @"304715988357-0bnltbm00rprd8tuggf4nri94i4o6flh.apps.googleusercontent.com";
 
 @interface AppDelegate ()
 
@@ -17,12 +20,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [GPPSignIn sharedInstance].clientID = kGooglePlusClientID;
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [GPPURLHandler handleURL:url
+                  sourceApplication:sourceApplication
+                         annotation:annotation];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
