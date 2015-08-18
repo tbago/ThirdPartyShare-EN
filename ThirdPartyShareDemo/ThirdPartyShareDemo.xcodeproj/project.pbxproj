@@ -25,6 +25,10 @@
 		D05C620D1B82D91000D7B438 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C620C1B82D91000D7B438 /* MediaPlayer.framework */; };
 		D05C620F1B82D91B00D7B438 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C620E1B82D91B00D7B438 /* AssetsLibrary.framework */; };
 		D05C62111B82D92400D7B438 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62101B82D92400D7B438 /* CoreLocation.framework */; };
+		D05C62141B82E00700D7B438 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62131B82E00700D7B438 /* FBSDKCoreKit.framework */; };
+		D05C62171B82E02000D7B438 /* FacebookShare.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C62161B82E02000D7B438 /* FacebookShare.m */; };
+		D05C621A1B82E27600D7B438 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62181B82E27600D7B438 /* FBSDKLoginKit.framework */; };
+		D05C621B1B82E27600D7B438 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62191B82E27600D7B438 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,11 @@
 		D05C620C1B82D91000D7B438 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D05C620E1B82D91B00D7B438 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		D05C62101B82D92400D7B438 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D05C62131B82E00700D7B438 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D05C62151B82E02000D7B438 /* FacebookShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShare.h; sourceTree = "<group>"; };
+		D05C62161B82E02000D7B438 /* FacebookShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShare.m; sourceTree = "<group>"; };
+		D05C62181B82E27600D7B438 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D05C62191B82E27600D7B438 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +83,14 @@
 			files = (
 				D05C62111B82D92400D7B438 /* CoreLocation.framework in Frameworks */,
 				D05C620F1B82D91B00D7B438 /* AssetsLibrary.framework in Frameworks */,
+				D05C621A1B82E27600D7B438 /* FBSDKLoginKit.framework in Frameworks */,
 				D05C620D1B82D91000D7B438 /* MediaPlayer.framework in Frameworks */,
 				D05C620B1B82D90100D7B438 /* AddressBook.framework in Frameworks */,
 				D05C62091B82CF4400D7B438 /* SystemConfiguration.framework in Frameworks */,
+				D05C621B1B82E27600D7B438 /* FBSDKShareKit.framework in Frameworks */,
 				D05C62071B82CACE00D7B438 /* CoreMotion.framework in Frameworks */,
 				D05C61FA1B82C9ED00D7B438 /* GoogleOpenSource.framework in Frameworks */,
+				D05C62141B82E00700D7B438 /* FBSDKCoreKit.framework in Frameworks */,
 				D05C61FB1B82C9ED00D7B438 /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +174,8 @@
 				D05C61FF1B82CA3C00D7B438 /* ThirdPartyShare.m */,
 				D05C61FC1B82CA3C00D7B438 /* GooglePlusShare.h */,
 				D05C61FD1B82CA3C00D7B438 /* GooglePlusShare.m */,
+				D05C62151B82E02000D7B438 /* FacebookShare.h */,
+				D05C62161B82E02000D7B438 /* FacebookShare.m */,
 				D05C61F61B82C99600D7B438 /* Frameworks */,
 			);
 			name = ThirdPartyShare;
@@ -171,6 +185,7 @@
 		D05C61F61B82C99600D7B438 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D05C62121B82DEAE00D7B438 /* Facebook */,
 				D05C61F71B82C9AD00D7B438 /* GooglePlus */,
 				D05C62051B82CA5300D7B438 /* FrameworkDependency */,
 			);
@@ -197,6 +212,16 @@
 				D05C62061B82CACE00D7B438 /* CoreMotion.framework */,
 			);
 			name = FrameworkDependency;
+			sourceTree = "<group>";
+		};
+		D05C62121B82DEAE00D7B438 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				D05C62181B82E27600D7B438 /* FBSDKLoginKit.framework */,
+				D05C62191B82E27600D7B438 /* FBSDKShareKit.framework */,
+				D05C62131B82E00700D7B438 /* FBSDKCoreKit.framework */,
+			);
+			path = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +327,7 @@
 				D05C62021B82CA3C00D7B438 /* GooglePlusShare.m in Sources */,
 				D05C62031B82CA3C00D7B438 /* ThirdPartyShare.m in Sources */,
 				D05C61D71B82C95B00D7B438 /* ViewController.m in Sources */,
+				D05C62171B82E02000D7B438 /* FacebookShare.m in Sources */,
 				D05C61D41B82C95B00D7B438 /* AppDelegate.m in Sources */,
 				D05C61D11B82C95B00D7B438 /* main.m in Sources */,
 				D05C62041B82CA3C00D7B438 /* ThirdPartyShareFactory.m in Sources */,
@@ -435,6 +461,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/GooglePlus",
+					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/Facebook",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +483,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/GooglePlus",
+					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/Facebook",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

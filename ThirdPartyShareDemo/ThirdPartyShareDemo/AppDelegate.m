@@ -28,6 +28,7 @@
 
 #import "AppDelegate.h"
 #import <GooglePlus/GooglePlus.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 static NSString * const kGooglePlusClientID = @"304715988357-0bnltbm00rprd8tuggf4nri94i4o6flh.apps.googleusercontent.com";
 
@@ -42,6 +43,9 @@ static NSString * const kGooglePlusClientID = @"304715988357-0bnltbm00rprd8tuggf
     // Override point for customization after application launch.
     
     [GPPSignIn sharedInstance].clientID = kGooglePlusClientID;
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
 
@@ -54,6 +58,10 @@ static NSString * const kGooglePlusClientID = @"304715988357-0bnltbm00rprd8tuggf
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
     return [GPPURLHandler handleURL:url
                   sourceApplication:sourceApplication
                          annotation:annotation];
@@ -70,6 +78,7 @@ static NSString * const kGooglePlusClientID = @"304715988357-0bnltbm00rprd8tuggf
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

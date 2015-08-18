@@ -28,6 +28,7 @@
 
 #import "ThirdPartyShareFactory.h"
 #import "GooglePlusShare.h"
+#import "FacebookShare.h"
 
 @implementation ThirdPartyShareFactory
 
@@ -44,6 +45,9 @@
     switch (sharedType) {
         case GooglePlus:
             return [[GooglePlusShare alloc] init];
+            break;
+        case Facebook:
+            return [[FacebookShare alloc] init];
             break;
         default:
             return nil;

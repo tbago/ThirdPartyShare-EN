@@ -30,8 +30,8 @@
 
 @interface ThirdPartyShare : NSObject
 
-- (void)sharedMessageWithTitle:(NSString *) sharedTitle
-                   Description:(NSString *) description
-                  thumbnailURL:(NSURL *) thumbnailURL;
+- (void)sharedMessage:(NSString *) message;
+
+- (void)sharedImage:(NSURL *) imageUrl;
 
 @end

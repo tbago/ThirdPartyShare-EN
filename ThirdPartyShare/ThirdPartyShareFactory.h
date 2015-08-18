@@ -31,6 +31,7 @@
 
 typedef NS_ENUM(NSInteger, SharedType) {
     GooglePlus,
+    Facebook,
 };
 
 @interface ThirdPartyShareFactory : NSObject

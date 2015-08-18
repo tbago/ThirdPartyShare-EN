@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -30,13 +32,43 @@
                                     <action selector="googlePlusButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OC2-E1-ZrM"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PA-Lc-Us7">
+                                <rect key="frame" x="96" y="40" width="60" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Aav-aC-3UZ"/>
+                                    <constraint firstAttribute="width" constant="60" id="yNZ-dy-uCc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx8-bS-xlV">
+                                <rect key="frame" x="23" y="107" width="30" height="30"/>
+                                <state key="normal" title="test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k3L-2g-Ook"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8PA-Lc-Us7" firstAttribute="centerY" secondItem="bQA-W9-bVv" secondAttribute="centerY" id="6SH-sz-Doh"/>
+                            <constraint firstItem="8PA-Lc-Us7" firstAttribute="leading" secondItem="bQA-W9-bVv" secondAttribute="trailing" constant="20" id="NgF-sf-wiV"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ngb-HL-pAE"/>
+                            <constraint firstItem="jx8-bS-xlV" firstAttribute="top" secondItem="bQA-W9-bVv" secondAttribute="bottom" constant="27" id="Nv4-28-QG8"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SJN-SG-SR6"/>
+                            <constraint firstItem="8PA-Lc-Us7" firstAttribute="top" secondItem="bQA-W9-bVv" secondAttribute="top" id="f64-UI-wc0"/>
+                            <constraint firstItem="jx8-bS-xlV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="u92-YN-FMq"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="f64-UI-wc0"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="facebookBackView" destination="8PA-Lc-Us7" id="A9T-eH-jUm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
