@@ -14,6 +14,8 @@
 		D05C61DC1B82C95B00D7B438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05C61DB1B82C95B00D7B438 /* Images.xcassets */; };
 		D05C61DF1B82C95B00D7B438 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05C61DD1B82C95B00D7B438 /* LaunchScreen.xib */; };
 		D05C61EB1B82C95B00D7B438 /* ThirdPartyShareDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61EA1B82C95B00D7B438 /* ThirdPartyShareDemoTests.m */; };
+		D05C61FA1B82C9ED00D7B438 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C61F81B82C9ED00D7B438 /* GoogleOpenSource.framework */; };
+		D05C61FB1B82C9ED00D7B438 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		D05C61E41B82C95B00D7B438 /* ThirdPartyShareDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyShareDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05C61E91B82C95B00D7B438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05C61EA1B82C95B00D7B438 /* ThirdPartyShareDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyShareDemoTests.m; sourceTree = "<group>"; };
+		D05C61F81B82C9ED00D7B438 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05C61FA1B82C9ED00D7B438 /* GoogleOpenSource.framework in Frameworks */,
+				D05C61FB1B82C9ED00D7B438 /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		D05C61C21B82C95B00D7B438 = {
 			isa = PBXGroup;
 			children = (
+				D05C61F51B82C98200D7B438 /* ThirdPartyShare */,
 				D05C61CD1B82C95B00D7B438 /* ThirdPartyShareDemo */,
 				D05C61E71B82C95B00D7B438 /* ThirdPartyShareDemoTests */,
 				D05C61CC1B82C95B00D7B438 /* Products */,
@@ -86,8 +93,6 @@
 				D05C61D51B82C95B00D7B438 /* ViewController.h */,
 				D05C61D61B82C95B00D7B438 /* ViewController.m */,
 				D05C61D81B82C95B00D7B438 /* Main.storyboard */,
-				D05C61DB1B82C95B00D7B438 /* Images.xcassets */,
-				D05C61DD1B82C95B00D7B438 /* LaunchScreen.xib */,
 				D05C61CE1B82C95B00D7B438 /* Supporting Files */,
 			);
 			path = ThirdPartyShareDemo;
@@ -96,6 +101,8 @@
 		D05C61CE1B82C95B00D7B438 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D05C61DB1B82C95B00D7B438 /* Images.xcassets */,
+				D05C61DD1B82C95B00D7B438 /* LaunchScreen.xib */,
 				D05C61CF1B82C95B00D7B438 /* Info.plist */,
 				D05C61D01B82C95B00D7B438 /* main.m */,
 			);
@@ -117,6 +124,32 @@
 				D05C61E91B82C95B00D7B438 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D05C61F51B82C98200D7B438 /* ThirdPartyShare */ = {
+			isa = PBXGroup;
+			children = (
+				D05C61F61B82C99600D7B438 /* Frameworks */,
+			);
+			name = ThirdPartyShare;
+			path = ../ThirdPartyShare;
+			sourceTree = "<group>";
+		};
+		D05C61F61B82C99600D7B438 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D05C61F71B82C9AD00D7B438 /* GooglePlus */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		D05C61F71B82C9AD00D7B438 /* GooglePlus */ = {
+			isa = PBXGroup;
+			children = (
+				D05C61F81B82C9ED00D7B438 /* GoogleOpenSource.framework */,
+				D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */,
+			);
+			path = GooglePlus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +382,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/GooglePlus",
+				);
 				INFOPLIST_FILE = ThirdPartyShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +396,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/yuneec/anxs/work/ThirdPartyShare-EN/ThirdPartyShare/Frameworks/GooglePlus",
+				);
 				INFOPLIST_FILE = ThirdPartyShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
