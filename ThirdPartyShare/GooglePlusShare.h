@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2015年 tbago.
+//  Copyright (C) 2015 tbago.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a 
 //  copy of this software and associated documentation files (the "Software"), 
@@ -28,6 +28,6 @@
 
 #import "ThirdPartyShare.h"
 
-@interface GooglePlusShare : NSObject
+@interface GooglePlusShare : ThirdPartyShare
 
 @end

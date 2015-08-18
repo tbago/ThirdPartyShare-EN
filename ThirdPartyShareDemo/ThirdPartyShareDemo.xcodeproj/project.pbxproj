@@ -21,6 +21,10 @@
 		D05C62041B82CA3C00D7B438 /* ThirdPartyShareFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C62011B82CA3C00D7B438 /* ThirdPartyShareFactory.m */; };
 		D05C62071B82CACE00D7B438 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62061B82CACE00D7B438 /* CoreMotion.framework */; };
 		D05C62091B82CF4400D7B438 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62081B82CF4400D7B438 /* SystemConfiguration.framework */; };
+		D05C620B1B82D90100D7B438 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C620A1B82D90100D7B438 /* AddressBook.framework */; };
+		D05C620D1B82D91000D7B438 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C620C1B82D91000D7B438 /* MediaPlayer.framework */; };
+		D05C620F1B82D91B00D7B438 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C620E1B82D91B00D7B438 /* AssetsLibrary.framework */; };
+		D05C62111B82D92400D7B438 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05C62101B82D92400D7B438 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		D05C62011B82CA3C00D7B438 /* ThirdPartyShareFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyShareFactory.m; sourceTree = "<group>"; };
 		D05C62061B82CACE00D7B438 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D05C62081B82CF4400D7B438 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D05C620A1B82D90100D7B438 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		D05C620C1B82D91000D7B438 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D05C620E1B82D91B00D7B438 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D05C62101B82D92400D7B438 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05C62111B82D92400D7B438 /* CoreLocation.framework in Frameworks */,
+				D05C620F1B82D91B00D7B438 /* AssetsLibrary.framework in Frameworks */,
+				D05C620D1B82D91000D7B438 /* MediaPlayer.framework in Frameworks */,
+				D05C620B1B82D90100D7B438 /* AddressBook.framework in Frameworks */,
 				D05C62091B82CF4400D7B438 /* SystemConfiguration.framework in Frameworks */,
 				D05C62071B82CACE00D7B438 /* CoreMotion.framework in Frameworks */,
 				D05C61FA1B82C9ED00D7B438 /* GoogleOpenSource.framework in Frameworks */,
@@ -177,6 +189,10 @@
 		D05C62051B82CA5300D7B438 /* FrameworkDependency */ = {
 			isa = PBXGroup;
 			children = (
+				D05C62101B82D92400D7B438 /* CoreLocation.framework */,
+				D05C620E1B82D91B00D7B438 /* AssetsLibrary.framework */,
+				D05C620C1B82D91000D7B438 /* MediaPlayer.framework */,
+				D05C620A1B82D90100D7B438 /* AddressBook.framework */,
 				D05C62081B82CF4400D7B438 /* SystemConfiguration.framework */,
 				D05C62061B82CACE00D7B438 /* CoreMotion.framework */,
 			);
@@ -426,7 +442,9 @@
 					../,
 				);
 				INFOPLIST_FILE = ThirdPartyShareDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -445,7 +463,9 @@
 					../,
 				);
 				INFOPLIST_FILE = ThirdPartyShareDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -503,6 +523,7 @@
 				D05C61F01B82C95B00D7B438 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D05C61F11B82C95B00D7B438 /* Build configuration list for PBXNativeTarget "ThirdPartyShareDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +532,7 @@
 				D05C61F31B82C95B00D7B438 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
