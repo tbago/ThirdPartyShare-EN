@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -49,6 +50,17 @@
                                     <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k3L-2g-Ook"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZA-Mb-92r">
+                                <rect key="frame" x="16" y="100" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Instagram">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d9T-rr-2kv"/>
+                                    <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVt-pT-kZK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -57,8 +69,12 @@
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="width" secondItem="bQA-W9-bVv" secondAttribute="width" id="HvB-uc-czZ"/>
                             <constraint firstItem="8PA-Lc-Us7" firstAttribute="leading" secondItem="bQA-W9-bVv" secondAttribute="trailing" constant="20" id="NgF-sf-wiV"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ngb-HL-pAE"/>
+                            <constraint firstItem="fZA-Mb-92r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PN7-wd-8T5"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SJN-SG-SR6"/>
+                            <constraint firstItem="bQA-W9-bVv" firstAttribute="width" secondItem="fZA-Mb-92r" secondAttribute="width" id="UI2-6C-ehC"/>
+                            <constraint firstItem="bQA-W9-bVv" firstAttribute="height" secondItem="fZA-Mb-92r" secondAttribute="height" id="Xa3-k1-mfa"/>
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="height" secondItem="bQA-W9-bVv" secondAttribute="height" id="dVq-mT-rxI"/>
+                            <constraint firstItem="fZA-Mb-92r" firstAttribute="top" secondItem="bQA-W9-bVv" secondAttribute="bottom" constant="20" id="eDx-UC-fWD"/>
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="centerY" secondItem="bQA-W9-bVv" secondAttribute="centerY" id="s7f-qi-KhU"/>
                         </constraints>
                     </view>

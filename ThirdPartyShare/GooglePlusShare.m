@@ -28,21 +28,41 @@
 
 #import "GooglePlusShare.h"
 #import <GooglePlus/GPPShare.h>
+#import <GooglePlus/GooglePlus.h>
+#import <GoogleOpenSource/GTLPlusConstants.h>
 
-@interface GooglePlusShare()
-@property (strong, nonatomic) id<GPPShareBuilder> shareBuilder;
+@interface GooglePlusShare() <GPPSignInDelegate>
 @end
 
 @implementation GooglePlusShare
 
-- (void)sharedMessageWithTitle:(NSString *) sharedTitle
-                   Description:(NSString *) description
-                  thumbnailURL:(NSURL *) thumbnailURL {
-    
-    self.shareBuilder = [[GPPShare sharedInstance] shareDialog];
-    
-    [self.shareBuilder setPrefillText:sharedTitle];
-    
-    [self.shareBuilder open];
+- (void)sharedImage:(UIImage *) image
+        prefillText:(NSString *) prefillText {
+//    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+//    [signIn signOut];
+//    if (![signIn authentication]) {
+//        signIn.delegate = self;
+//        signIn.scopes = [NSArray arrayWithObjects:
+//                         kGTLAuthScopePlusLogin, // 在 GTLPlusConstants.h 中定义
+//                         nil];
+//        [signIn authenticate];
+//    }
+    id<GPPNativeShareBuilder> shareBuilder = [[GPPShare sharedInstance] nativeShareDialog];
+
+    [shareBuilder setPrefillText:prefillText];
+    [shareBuilder attachImage:image];
+    [shareBuilder open];
 }
+
+#pragma mark - GPPSignInDelegate
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error
+{
+    NSLog(@"Received error %@ and auth object %@",error, auth);
+    if (error) {
+        // 在此处执行某些错误处理。
+    } else {
+    }
+}
+
 @end

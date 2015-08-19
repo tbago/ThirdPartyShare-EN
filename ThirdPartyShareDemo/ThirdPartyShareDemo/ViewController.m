@@ -30,7 +30,10 @@
 #import "GooglePlusShare.h"
 #import "FacebookShare.h"
 
-@interface ViewController ()
+#import <GooglePlus/GooglePlus.h>
+#import <GoogleOpenSource/GTLPlusConstants.h>
+
+@interface ViewController () <GPPSignInDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *facebookBackView;
 
@@ -42,19 +45,47 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)googlePlusButtonClick:(UIButton *)sender {
-//    ThirdPartyShare *googlePlusShare = [[ThirdPartyShareFactory sharedInstance] createThirdPartySharedInstance:GooglePlus];
-//    [googlePlusShare sharedMessageWithTitle:@"test title" Description:@"description" thumbnailURL:nil];
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    signIn.delegate = self;
+    if (![signIn authentication]) {
+        signIn.shouldFetchGooglePlusUser = YES;
+        signIn.scopes = [NSArray arrayWithObjects:
+                         kGTLAuthScopePlusLogin, // 在 GTLPlusConstants.h 中定义
+                         nil];
+        [signIn authenticate];
+    }
 }
 
 - (IBAction)facebookButtonClick:(UIButton *)sender {
     FacebookShare *facebookShare = [[FacebookShare alloc] init];
     [facebookShare sharedImage:[UIImage imageNamed:@"facebook_share"]
             fromViewController:self];
+}
+
+- (IBAction)instagramButtonClick:(UIButton *)sender {
+
+}
+
+#pragma mark - GPPSignInDelegate
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error
+{
+    NSLog(@"Received error %@ and auth object %@",error, auth);
+    if (error) {
+        // 在此处执行某些错误处理。
+    } else {
+        GooglePlusShare *googlePlusShare = [[GooglePlusShare alloc] init];
+        [googlePlusShare sharedImage:[UIImage imageNamed:@"facebook_share"] prefillText:@"test google share"];
+    }
 }
 @end

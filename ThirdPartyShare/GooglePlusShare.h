@@ -27,11 +27,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GooglePlusShare : NSObject
 
-- (void)sharedMessageWithTitle:(NSString *) sharedTitle
-                   Description:(NSString *) description
-                  thumbnailURL:(NSURL *) thumbnailURL;
+- (void)sharedImage:(UIImage *) image
+        prefillText:(NSString *) prefillText;
 
 @end
