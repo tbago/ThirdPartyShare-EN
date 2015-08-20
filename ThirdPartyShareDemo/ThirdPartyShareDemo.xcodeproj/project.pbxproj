@@ -177,6 +177,7 @@
 		D05C61F61B82C99600D7B438 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0F8089B1B845FCB0041B303 /* Twitter */,
 				D05C62121B82DEAE00D7B438 /* Facebook */,
 				D05C61F71B82C9AD00D7B438 /* GooglePlus */,
 				D05C62051B82CA5300D7B438 /* FrameworkDependency */,
@@ -215,6 +216,13 @@
 				D05C62131B82E00700D7B438 /* FBSDKCoreKit.framework */,
 			);
 			path = Facebook;
+			sourceTree = "<group>";
+		};
+		D0F8089B1B845FCB0041B303 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Twitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

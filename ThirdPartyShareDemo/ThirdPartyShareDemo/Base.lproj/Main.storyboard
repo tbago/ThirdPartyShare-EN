@@ -61,12 +61,42 @@
                                     <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVt-pT-kZK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsK-DI-C6l">
+                                <rect key="frame" x="96" y="100" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OvZ-6a-41G"/>
+                                    <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pO-M9-e8T"/>
+                                    <action selector="twitterButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hao-7Q-WSy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6f-bw-dez">
+                                <rect key="frame" x="16" y="180" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Youtube">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FSl-HW-fhn"/>
+                                    <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ege-Cj-53e"/>
+                                    <action selector="youtubeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kez-D1-6y1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HsK-DI-C6l" firstAttribute="top" secondItem="jx8-bS-xlV" secondAttribute="bottom" constant="20" id="2vC-g9-D2I"/>
+                            <constraint firstItem="n6f-bw-dez" firstAttribute="width" secondItem="bQA-W9-bVv" secondAttribute="width" id="5aK-BR-w1g"/>
                             <constraint firstItem="8PA-Lc-Us7" firstAttribute="centerY" secondItem="bQA-W9-bVv" secondAttribute="centerY" id="6SH-sz-Doh"/>
+                            <constraint firstItem="HsK-DI-C6l" firstAttribute="height" secondItem="bQA-W9-bVv" secondAttribute="height" id="8j8-xB-gUC"/>
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="leading" secondItem="bQA-W9-bVv" secondAttribute="trailing" constant="20" id="AO6-ZD-MvP"/>
+                            <constraint firstItem="n6f-bw-dez" firstAttribute="height" secondItem="bQA-W9-bVv" secondAttribute="height" id="GSp-Wl-1hC"/>
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="width" secondItem="bQA-W9-bVv" secondAttribute="width" id="HvB-uc-czZ"/>
+                            <constraint firstItem="HsK-DI-C6l" firstAttribute="width" secondItem="bQA-W9-bVv" secondAttribute="width" id="I5K-aI-HEu"/>
+                            <constraint firstItem="n6f-bw-dez" firstAttribute="top" secondItem="fZA-Mb-92r" secondAttribute="bottom" constant="20" id="Ndh-zs-v0H"/>
                             <constraint firstItem="8PA-Lc-Us7" firstAttribute="leading" secondItem="bQA-W9-bVv" secondAttribute="trailing" constant="20" id="NgF-sf-wiV"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ngb-HL-pAE"/>
                             <constraint firstItem="fZA-Mb-92r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PN7-wd-8T5"/>
@@ -74,9 +104,17 @@
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="width" secondItem="fZA-Mb-92r" secondAttribute="width" id="UI2-6C-ehC"/>
                             <constraint firstItem="bQA-W9-bVv" firstAttribute="height" secondItem="fZA-Mb-92r" secondAttribute="height" id="Xa3-k1-mfa"/>
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="height" secondItem="bQA-W9-bVv" secondAttribute="height" id="dVq-mT-rxI"/>
+                            <constraint firstItem="HsK-DI-C6l" firstAttribute="leading" secondItem="fZA-Mb-92r" secondAttribute="trailing" constant="20" id="e9d-si-wyM"/>
                             <constraint firstItem="fZA-Mb-92r" firstAttribute="top" secondItem="bQA-W9-bVv" secondAttribute="bottom" constant="20" id="eDx-UC-fWD"/>
+                            <constraint firstItem="HsK-DI-C6l" firstAttribute="height" secondItem="bQA-W9-bVv" secondAttribute="height" id="fZF-Qt-e7c"/>
+                            <constraint firstItem="n6f-bw-dez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iEf-sB-tOf"/>
                             <constraint firstItem="jx8-bS-xlV" firstAttribute="centerY" secondItem="bQA-W9-bVv" secondAttribute="centerY" id="s7f-qi-KhU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8j8-xB-gUC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="facebookBackView" destination="8PA-Lc-Us7" id="A9T-eH-jUm"/>

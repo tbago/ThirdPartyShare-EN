@@ -76,6 +76,15 @@
 
 }
 
+- (IBAction)twitterButtonClick:(UIButton *)sender {
+    
+}
+
+
+- (IBAction)youtubeButtonClick:(UIButton *)sender {
+    
+}
+
 #pragma mark - GPPSignInDelegate
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error
