@@ -57,7 +57,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d9T-rr-2kv"/>
                                     <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVt-pT-kZK"/>
                                 </connections>
                             </button>
@@ -68,8 +67,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OvZ-6a-41G"/>
-                                    <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pO-M9-e8T"/>
                                     <action selector="twitterButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hao-7Q-WSy"/>
                                 </connections>
                             </button>
@@ -80,8 +77,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="facebookButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FSl-HW-fhn"/>
-                                    <action selector="instagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ege-Cj-53e"/>
                                     <action selector="youtubeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kez-D1-6y1"/>
                                 </connections>
                             </button>

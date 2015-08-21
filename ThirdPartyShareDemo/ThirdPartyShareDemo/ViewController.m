@@ -33,10 +33,11 @@
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GTLPlusConstants.h>
 
-@interface ViewController () <GPPSignInDelegate>
+@interface ViewController () <GPPSignInDelegate, UIDocumentInteractionControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *facebookBackView;
 
+@property (nonatomic, retain) UIDocumentInteractionController *documentController;
 @end
 
 @implementation ViewController
@@ -73,7 +74,48 @@
 }
 
 - (IBAction)instagramButtonClick:(UIButton *)sender {
+    [self sharedImage:[UIImage imageNamed:@"facebook_share"]
+                        caption:@"shared from Demo"
+                     fatherView:self.view];
+}
 
+#pragma mark - Instagram implement
+- (void)sharedImage:(UIImage *) image
+            caption:(NSString *) caption
+         fatherView:(UIView *) fatherView
+{
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
+    if([[UIApplication sharedApplication] canOpenURL:instagramURL]) //check for App is install or not
+    {
+        NSData *imageData = UIImagePNGRepresentation(image);            //convert image into png data.
+        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"insta.igo"]]; //add our image to the path
+        NSFileManager *fileManager = [NSFileManager defaultManager];        //create instance of NSFileManager
+        [fileManager createFileAtPath:fullPath contents:imageData attributes:nil];      //finally save the path (image)
+        
+        NSString *fileNameToSave    = [NSString stringWithFormat:@"Documents/insta.igo"];
+        NSString *pngPath           = [NSHomeDirectory() stringByAppendingPathComponent:fileNameToSave];
+        NSString *newPngPath        = [NSString stringWithFormat:@"file://%@",pngPath];
+        NSURL *igImageHookFile      = [[NSURL alloc] initFileURLWithPath:newPngPath];
+        
+        self.documentController.UTI = @"com.instagram.exclusivegram";
+        self.documentController     = [self setupControllerWithURL:igImageHookFile usingDelegate:self];
+        self.documentController     =[UIDocumentInteractionController interactionControllerWithURL:igImageHookFile];
+        
+        self.documentController.annotation = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@",caption], @"InstagramCaption", nil];
+        
+        [self.documentController presentOpenInMenuFromRect:CGRectZero inView:fatherView animated:YES];
+    }
+    else {
+        NSLog (@"Instagram not found");
+    }
+}
+
+#pragma mark - UIDocumentInteractionControllerDelegate
+- (UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL usingDelegate: (id <UIDocumentInteractionControllerDelegate>) interactionDelegate {
+    UIDocumentInteractionController *interactionController = [UIDocumentInteractionController interactionControllerWithURL: fileURL];
+    interactionController.delegate = interactionDelegate;
+    return interactionController;
 }
 
 - (IBAction)twitterButtonClick:(UIButton *)sender {
@@ -84,6 +126,7 @@
 - (IBAction)youtubeButtonClick:(UIButton *)sender {
     
 }
+
 
 #pragma mark - GPPSignInDelegate
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
