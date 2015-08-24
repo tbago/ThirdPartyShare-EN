@@ -29,6 +29,10 @@
 #import "FacebookShare.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
+@interface FacebookShare()<FBSDKSharingDelegate>
+
+@end
+
 @implementation FacebookShare
 
 - (void)sharedImage:(UIImage *) sharedImage
@@ -43,8 +47,22 @@
     
     FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
     dialog.fromViewController = fromViewController;
+    dialog.delegate = self;
     dialog.shareContent = content;
     dialog.mode = FBSDKShareDialogModeShareSheet;
     [dialog show];
+}
+
+#pragma mark - FBSDKSharingDelegate
+- (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results {
+    
+}
+
+- (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error {
+    
+}
+
+- (void)sharerDidCancel:(id<FBSDKSharing>)sharer {
+    
 }
 @end
