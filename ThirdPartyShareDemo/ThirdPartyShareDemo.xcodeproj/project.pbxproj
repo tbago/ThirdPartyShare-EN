@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01FDD701B8C5C0000EFBE32 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D01FDD6F1B8C5C0000EFBE32 /* GooglePlus.bundle */; };
 		D05C61D11B82C95B00D7B438 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61D01B82C95B00D7B438 /* main.m */; };
 		D05C61D41B82C95B00D7B438 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61D31B82C95B00D7B438 /* AppDelegate.m */; };
 		D05C61D71B82C95B00D7B438 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05C61D61B82C95B00D7B438 /* ViewController.m */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D01FDD6F1B8C5C0000EFBE32 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		D05C61CB1B82C95B00D7B438 /* ThirdPartyShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirdPartyShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05C61CF1B82C95B00D7B438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05C61D01B82C95B00D7B438 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		D05C61F71B82C9AD00D7B438 /* GooglePlus */ = {
 			isa = PBXGroup;
 			children = (
+				D01FDD6F1B8C5C0000EFBE32 /* GooglePlus.bundle */,
 				D05C61F81B82C9ED00D7B438 /* GoogleOpenSource.framework */,
 				D05C61F91B82C9ED00D7B438 /* GooglePlus.framework */,
 			);
@@ -300,6 +303,7 @@
 			files = (
 				D05C61DA1B82C95B00D7B438 /* Main.storyboard in Resources */,
 				D05C61DF1B82C95B00D7B438 /* LaunchScreen.xib in Resources */,
+				D01FDD701B8C5C0000EFBE32 /* GooglePlus.bundle in Resources */,
 				D05C61DC1B82C95B00D7B438 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
