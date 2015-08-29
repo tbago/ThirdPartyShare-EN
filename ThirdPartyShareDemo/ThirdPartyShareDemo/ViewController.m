@@ -32,8 +32,9 @@
 
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GTLPlusConstants.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
-@interface ViewController () <GPPSignInDelegate, UIDocumentInteractionControllerDelegate>
+@interface ViewController () <GPPSignInDelegate, UIDocumentInteractionControllerDelegate, FBSDKSharingDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *facebookBackView;
 
@@ -68,8 +69,7 @@
 }
 
 - (IBAction)facebookButtonClick:(UIButton *)sender {
-    FacebookShare *facebookShare = [[FacebookShare alloc] init];
-    [facebookShare sharedImage:[UIImage imageNamed:@"facebook_share"]
+    [self sharedImage:[UIImage imageNamed:@"facebook_share"]
             fromViewController:self];
 }
 
@@ -134,10 +134,41 @@
 {
     NSLog(@"Received error %@ and auth object %@",error, auth);
     if (error) {
-        // 在此处执行某些错误处理。
     } else {
         GooglePlusShare *googlePlusShare = [[GooglePlusShare alloc] init];
         [googlePlusShare sharedImage:[UIImage imageNamed:@"facebook_share"] prefillText:@"test google share"];
     }
+}
+
+#pragma mark - facebookshare
+- (void)sharedImage:(UIImage *) sharedImage
+ fromViewController:(UIViewController *) fromViewController
+{
+    FBSDKSharePhoto *photo  = [[FBSDKSharePhoto alloc] init];
+    photo.image             = sharedImage;
+    photo.userGenerated     = YES;
+    
+    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+    content.photos = @[photo];
+    
+    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
+    dialog.fromViewController = fromViewController;
+    dialog.delegate = self;
+    dialog.shareContent = content;
+    dialog.mode = FBSDKShareDialogModeShareSheet;
+    [dialog show];
+}
+
+#pragma mark - FBSDKSharingDelegate
+- (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results {
+    
+}
+
+- (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error {
+    
+}
+
+- (void)sharerDidCancel:(id<FBSDKSharing>)sharer {
+    
 }
 @end
